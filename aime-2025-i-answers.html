@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>2025 AIME I · 答案</title>
-<script>MathJax={tex:{inlineMath:[['$','$'],['\(','\)']],displayMath:[['$$','$$'],['\[','\]']]}};</script>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]}};</script>
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><style>
 body{max-width:840px;margin:0 auto;padding:24px 18px;font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.75;color:#1a1a1a;background:#fff}
 h1{font-size:1.7em;border-bottom:3px solid #b7791f;padding-bottom:10px;color:#744210}
@@ -8,49 +8,70 @@ h2{font-size:1.25em;margin-top:1.6em;color:#b7791f;border-left:4px solid #b7791f
 .prob{background:#fffaf0;border:1px solid #f0e0c0;border-radius:6px;padding:14px 16px;margin:18px 0}
 .qn{font-weight:700;color:#744210;font-size:1.05em}
 .ans{display:inline-block;background:#744210;color:#fff;padding:2px 12px;border-radius:14px;font-weight:700}
+.cn{background:#eef5ff;border-left:3px solid #3182ce;padding:8px 12px;margin-top:10px;border-radius:4px;color:#1a365d}
+.cnlabel{font-weight:700;color:#2b6cb0;font-size:.85em}
 table{border-collapse:collapse;width:100%;margin:1em 0} th,td{border:1px solid #cbd5e0;padding:6px 9px;text-align:center}
 th{background:#b7791f;color:#fff} tr:nth-child(even){background:#fffaf0}
 blockquote{border-left:4px solid #cbd5e0;background:#f7fafc;padding:8px 14px;color:#4a5568}
 a{color:#b7791f} p{margin:.5em 0} .nav{margin-bottom:14px}
-.cn{background:#eef5ff;border-left:3px solid #3182ce;padding:8px 12px;margin-top:10px;border-radius:4px;color:#1a365d}
-.cnlabel{font-weight:700;color:#2b6cb0;font-size:.85em}
 .btn{display:inline-block;background:#b7791f;color:#fff;padding:8px 18px;border-radius:6px;text-decoration:none;font-weight:600;margin:8px 0}
+.engsol{color:#555}
 </style></head><body>
 <div class="nav"><a href="aime-2025-i.html">← 返回题目</a> &nbsp;|&nbsp; <a href="./">首页</a></div>
 <h1>2025 AIME I · 答案与解析</h1>
 <h2>答案速查表</h2><table><tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th></tr><tr><td>70</td><td>588</td><td>16</td><td>117</td><td>279</td><td>504</td><td>821</td><td>77</td><td>62</td><td>81</td><td>259</td><td>510</td><td>204</td><td>60</td><td>735</td></tr></table>
 <h2>详细解答</h2>
-<div class="prob"><div class="qn">Problem 1 &nbsp; <span class="ans">答案 70</span></div><p style="color:#744210"><i>题目：</i></p><p>Find the sum of all integer bases $b > 9$ for which $17_b$ is a divisor of $97_b$.</p><div class="cn"><span class="cnlabel">中文：</span><p>求所有满足 $17_b$ 整除 $97_b$ 的整数进制 $b>9$ 之和。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>We are tasked with finding the number of integer bases $b>9$ such that $@@MATH0@@in@@MATH1@@[@@MATH2@@cfrac{9b+63-56}{b+7}=@@MATH3@@cfrac{56}{b+7}@@MATH4@@cfrac{56}{b+7}@@MATH5@@mathbb{Z}$. Then $b+7$ is a factor of $56$.</p>
-<p>The factors of $56$ are $1,2,4,7,8,14,28,56$. Of these, only $8,14,28,56$ produce a positive $b$, namely $b=1,7,21,49$ respectively. However, we are what are you looking at that $b>9$, so only $b=21,49$ are solutions. Thus the answer is $070$ .</p></div>
-<div class="prob"><div class="qn">Problem 2 &nbsp; <span class="ans">答案 588</span></div><p style="color:#744210"><i>题目：</i></p><p>On $@@MATH0@@overline{AB}$
+<div class="prob"><div class="qn">Problem 1 &nbsp; <span class="ans">答案 70</span></div><p style="color:#744210"><i>题目：</i></p><p>Find the sum of all integer bases $b > 9$ for which $17_b$ is a divisor of $97_b$.</p><div class="cn"><span class="cnlabel">中文题目：</span><p>求所有满足 $17_b$ 整除 $97_b$ 的整数进制 $b>9$ 之和。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>We are tasked with finding the number of integer bases $b>9$ such that $\cfrac{9b+7}{b+7}\in\mathbb{Z}$. Notice that
+\[\cfrac{9b+7}{b+7}=\cfrac{9b+63-56}{b+7}=\cfrac{9(b+7)-56}{b+7}=9-\cfrac{56}{b+7}\]
+so we need only $\cfrac{56}{b+7}\in\mathbb{Z}$. Then $b+7$ is a factor of $56$.</p>
+<p>The factors of $56$ are $1,2,4,7,8,14,28,56$. Of these, only $8,14,28,56$ produce a positive $b$, namely $b=1,7,21,49$ respectively. However, we are what are you looking at that $b>9$, so only $b=21,49$ are solutions. Thus the answer is $070$ .</p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>我们的任务是求出满足 $\cfrac{9b+7}{b+7}\in\mathbb{Z}$ 的整数进制 $b>9$ 的个数。注意到
+\[\cfrac{9b+7}{b+7}=\cfrac{9b+63-56}{b+7}=\cfrac{9(b+7)-56}{b+7}=9-\cfrac{56}{b+7}\]
+所以只需 $\cfrac{56}{b+7}\in\mathbb{Z}$。于是 $b+7$ 是 $56$ 的因数。</p>
+<p>$56$ 的因数有 $1,2,4,7,8,14,28,56$。其中只有 $8,14,28,56$ 能得到正的 $b$，分别为 $b=1,7,21,49$。但题目要求 $b>9$，所以只有 $b=21,49$ 是解。因此答案是 $070$。</p></div></div>
+<div class="prob"><div class="qn">Problem 2 &nbsp; <span class="ans">答案 588</span></div><p style="color:#744210"><i>题目：</i></p><p>On $\triangle ABC$ points $A$, $D$, $E$, and $B$ lie in that order on side $\overline{AB}$
 with $AD = 4$, $DE = 16$, and $EB = 8$. Points $A$, $F$, $G$, and $C$ lie in that order on side $\overline{AC}$ with $AF = 13$, $FG = 52$, and $GC = 26$. Let $M$ be the reflection of $D$ through $F$, and let $N$ be the reflection of $G$ through $E$. Quadrilateral $DEGF$ has area $288$. Find the area of heptagon $AFNBCEM$.</p>
-<p><em>[图：原题附几何图，见 AoPS 原页]</em></p><div class="cn"><span class="cnlabel">中文：</span><p>在 $@@MATH0@@overline{AB}$ 上，$AD=4, DE=16, EB=8$；点 $A, F, G, C$ 按此顺序位于边 $\overline{AC}$ 上，$AF=13, FG=52, GC=26$。设 $M$ 为 $D$ 关于 $F$ 的对称点，$N$ 为 $G$ 关于 $E$ 的对称点。四边形 $DEGF$ 的面积为 $288$。求七边形 $AFNBCEM$ 的面积。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>Note that the triangles outside $@@MATH0@@triangle ABC$. Since they have the same bases, the area of the heptagon is the same as the area of triangle $ABC$. Therefore, we need to calculate the area of $@@MATH1@@triangle ADF @@MATH2@@triangle AEG$, $EG = 5x$ and the altitude of $DFGE$ is $4h$. The area $[DFGE] = @@MATH3@@cdot 4h = 3x @@MATH4@@implies xh = 24$. The area of $@@MATH5@@frac{1}{2} 7x @@MATH6@@frac{1}{2} 49xh = @@MATH7@@cdot 24 = @@MATH8@@boxed{588}$.</p>
-<p>~alwaysgonnagiveyouup</p></div>
-<div class="prob"><div class="qn">Problem 3 &nbsp; <span class="ans">答案 16</span></div><p style="color:#744210"><i>题目：</i></p><p>The $9$ members of a baseball team went to an ice-cream parlor after their game. Each player had a single scoop cone of chocolate, vanilla, or strawberry ice cream. At least one player chose each flavor, and the number of players who chose chocolate was greater than the number of players who chose vanilla, which was greater than the number of players who chose strawberry. Let $N$ be the number of different assignments of flavors to players that meet these conditions. Find the remainder when $N$ is divided by $1000.$</p><div class="cn"><span class="cnlabel">中文：</span><p>一支棒球队的 $9$ 名队员赛后去冰淇淋店，每人吃一个单球蛋筒，口味为巧克力、香草或草莓。每种口味至少一人选，且选巧克力人数 $>$ 选香草人数 $>$ 选草莓人数。设 $N$ 为满足这些条件的口味分配方案数。求 $N$ 除以 $1000$ 的余数。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>Let $c$ be the number of players who choose chocolate, $v$ be the number of players who choose vanilla, and $s$ be the number of players who choose strawberry ice cream. We are given three pieces of information $c,v,s\ge 1$ and $c+v+s=9$ and $c>v>s$.
-
-By inspection the only solutions for $(c,v,s)$ are $(4,3,2),(5,3,1), (6, 2, 1)$
-
-Now we must choose which player chooses which flavor. For the general case $(c,v,s),$ we begin by choose $c$ of the $9$ players who eat chocolate, then we choose $v$ of the $9-c$ players who eat vanilla, after this the amount of players who eat strawberry is fixed. Therefore the general formula is $\binom{9}{c}\binom{9-c}{v}.$
-
-Therefore our final answer is, \[\binom{9}{4}\binom{9-4}{3} + \binom{9}{5}\binom{9-5}{3} + \binom{9}{6}\binom{9-6}{2} = \binom{9}{4}\binom{5}{3} + \binom{9}{5}\binom{4}{3} + \binom{9}{6}\binom{3}{2} = 2\boxed{016}\]</p>
+<p><em>[图：原题附几何图，见 AoPS 原页]</em></p><div class="cn"><span class="cnlabel">中文题目：</span><p>在 $\triangle ABC$ 中，点 $A, D, E, B$ 按此顺序位于边 $\overline{AB}$ 上，$AD=4, DE=16, EB=8$；点 $A, F, G, C$ 按此顺序位于边 $\overline{AC}$ 上，$AF=13, FG=52, GC=26$。设 $M$ 为 $D$ 关于 $F$ 的对称点，$N$ 为 $G$ 关于 $E$ 的对称点。四边形 $DEGF$ 的面积为 $288$。求七边形 $AFNBCEM$ 的面积。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>Note that the triangles outside $\triangle ABC$ have the same height as the unshaded triangles in $\triangle ABC$. Since they have the same bases, the area of the heptagon is the same as the area of triangle $ABC$. Therefore, we need to calculate the area of $\triangle ABC$. Denote the length of $DF$ as $x$ and the altitude of $A$ to $DF$ as $h$. Since $\triangle ADF \sim \triangle AEG$, $EG = 5x$ and the altitude of $DFGE$ is $4h$. The area $[DFGE] = \frac{5x + x}{2} \cdot 4h = 3x \cdot 4h = 12xh = 288 \implies xh = 24$. The area of $\triangle ABC$ is equal to $\frac{1}{2} 7x \cdot 7h = \frac{1}{2} 49xh = \frac{1}{2} 49 \cdot 24 = \frac{1}{2} 1176 = \boxed{588}$.</p>
+<p>~alwaysgonnagiveyouup</p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>注意到 $\triangle ABC$ 外部的那些三角形与 $\triangle ABC$ 内部未阴影的三角形具有相同的高。由于它们的底也相同，所以七边形的面积与三角形 $ABC$ 的面积相等。因此，我们只需计算 $\triangle ABC$ 的面积。记 $DF$ 的长为 $x$，$A$ 到 $DF$ 的高为 $h$。由于 $\triangle ADF \sim \triangle AEG$，故 $EG = 5x$，且 $DFGE$ 的高为 $4h$。面积 $[DFGE] = \frac{5x + x}{2} \cdot 4h = 3x \cdot 4h = 12xh = 288 \implies xh = 24$。于是 $\triangle ABC$ 的面积为 $\frac{1}{2} 7x \cdot 7h = \frac{1}{2} 49xh = \frac{1}{2} 49 \cdot 24 = \frac{1}{2} 1176 = \boxed{588}$。</p>
+<p>~alwaysgonnagiveyouup</p></div></div>
+<div class="prob"><div class="qn">Problem 3 &nbsp; <span class="ans">答案 16</span></div><p style="color:#744210"><i>题目：</i></p><p>The $9$ members of a baseball team went to an ice-cream parlor after their game. Each player had a single scoop cone of chocolate, vanilla, or strawberry ice cream. At least one player chose each flavor, and the number of players who chose chocolate was greater than the number of players who chose vanilla, which was greater than the number of players who chose strawberry. Let $N$ be the number of different assignments of flavors to players that meet these conditions. Find the remainder when $N$ is divided by $1000.$</p><div class="cn"><span class="cnlabel">中文题目：</span><p>一支棒球队的 $9$ 名队员赛后去冰淇淋店，每人吃一个单球蛋筒，口味为巧克力、香草或草莓。每种口味至少一人选，且选巧克力人数 $>$ 选香草人数 $>$ 选草莓人数。设 $N$ 为满足这些条件的口味分配方案数。求 $N$ 除以 $1000$ 的余数。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>Let $c$ be the number of players who choose chocolate, $v$ be the number of players who choose vanilla, and $s$ be the number of players who choose strawberry ice cream. We are given three pieces of information $c,v,s\ge 1$ and $c+v+s=9$ and $c>v>s$.</p>
+<p>By inspection the only solutions for $(c,v,s)$ are $(4,3,2),(5,3,1), (6, 2, 1)$</p>
+<p>Now we must choose which player chooses which flavor. For the general case $(c,v,s),$ we begin by choose $c$ of the $9$ players who eat chocolate, then we choose $v$ of the $9-c$ players who eat vanilla, after this the amount of players who eat strawberry is fixed. Therefore the general formula is $\binom{9}{c}\binom{9-c}{v}.$</p>
+<p>Therefore our final answer is, \[\binom{9}{4}\binom{9-4}{3} + \binom{9}{5}\binom{9-5}{3} + \binom{9}{6}\binom{9-6}{2} = \binom{9}{4}\binom{5}{3} + \binom{9}{5}\binom{4}{3} + \binom{9}{6}\binom{3}{2} = 2\boxed{016}\]</p>
 <p>Alternatively, this can be written in multinomial coefficients as</p>
 <pre><code>
 </code></pre>
 <p>which gives the same answer</p>
 <p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Mathkiddus" title="User:Mathkiddus">mathkiddus</a>
-~ sujoybec51 multiple edits to make more clear</p></div>
-<div class="prob"><div class="qn">Problem 4 &nbsp; <span class="ans">答案 117</span></div><p style="color:#744210"><i>题目：</i></p><p>Find the number of ordered pairs $(x,y)$, where both $x$ and $y$ are integers between $-100$ and $100$, inclusive, such that $12x^2-xy-6y^2=0$.</p><div class="cn"><span class="cnlabel">中文：</span><p>求有序整数对 $(x,y)$ 的个数，其中 $x$ 和 $y$ 都是 $-100$ 到 $100$（含端点）的整数，且满足 $12x^2-xy-6y^2=0$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>We begin by factoring, $12x^2-xy-6y^2=(3x+2y)(4x-3y)=0.$ Since the RHS is $0$ we have two options,</p>
-<p>$@@MATH0@@text{Case 1:}}@@MATH1@@frac{-3x}{2}.$ Using the bounding on $y$ we have,
+~ sujoybec51 multiple edits to make more clear</p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>设 $c$ 为选巧克力的队员数，$v$ 为选香草的队员数，$s$ 为选草莓冰淇淋的队员数。我们得到三条信息：$c,v,s\ge 1$，$c+v+s=9$，以及 $c>v>s$。</p>
+<p>通过检验，$(c,v,s)$ 的唯一可能解为 $(4,3,2),(5,3,1),(6, 2, 1)$。</p>
+<p>现在我们必须确定哪位队员选哪种口味。对于一般情形 $(c,v,s)$，我们先从 $9$ 名队员中选出 $c$ 名吃巧克力的，再从剩下的 $9-c$ 名队员中选出 $v$ 名吃香草的，此后吃草莓的队员数就固定了。因此一般公式为 $\binom{9}{c}\binom{9-c}{v}$。</p>
+<p>所以最终答案为
+\[\binom{9}{4}\binom{9-4}{3} + \binom{9}{5}\binom{9-5}{3} + \binom{9}{6}\binom{9-6}{2} = \binom{9}{4}\binom{5}{3} + \binom{9}{5}\binom{4}{3} + \binom{9}{6}\binom{3}{2} = 2\boxed{016}\]</p>
+<p>此外，这也可以用多项式系数写出，结果相同。</p>
+<p>~ mathkiddus
+~ sujoybec51 多次编辑以使表述更清晰</p></div></div>
+<div class="prob"><div class="qn">Problem 4 &nbsp; <span class="ans">答案 117</span></div><p style="color:#744210"><i>题目：</i></p><p>Find the number of ordered pairs $(x,y)$, where both $x$ and $y$ are integers between $-100$ and $100$, inclusive, such that $12x^2-xy-6y^2=0$.</p><div class="cn"><span class="cnlabel">中文题目：</span><p>求有序整数对 $(x,y)$ 的个数，其中 $x$ 和 $y$ 都是 $-100$ 到 $100$（含端点）的整数，且满足 $12x^2-xy-6y^2=0$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>We begin by factoring, $12x^2-xy-6y^2=(3x+2y)(4x-3y)=0.$ Since the RHS is $0$ we have two options,</p>
+<p>$\underline{\text{Case 1:}}\text{ } 3x+2y = 0$</p>
+<p>In this case we have, $y=\frac{-3x}{2}.$ Using the bounding on $y$ we have,
 \[-100\le\frac{-3x}{2}\le 100.\]\[\frac{200}{3}\ge x \ge \frac{-200}{3}.\]
-In addition in order for $y$ to be integer $2 | x,$ so we substitute $x=2k.$\[\frac{200}{3}\ge 2k \ge \frac{-200}{3}.\]\[\frac{100}{3}\ge k \ge \frac{-100}{3}.\] From this we have solutions starting from $-33$ to $33$ which is $67$ solutions.
-
-$\underline{\text{Case 2: }}\text{ } 4x-3y = 0$</p>
+In addition in order for $y$ to be integer $2 | x,$ so we substitute $x=2k.$\[\frac{200}{3}\ge 2k \ge \frac{-200}{3}.\]\[\frac{100}{3}\ge k \ge \frac{-100}{3}.\] From this we have solutions starting from $-33$ to $33$ which is $67$ solutions.</p>
+<p>$\underline{\text{Case 2: }}\text{ } 4x-3y = 0$</p>
 <p>On the other hand, we have, $y=\frac{4x}{3}.$ From bounds we have,
 \[-100\le\frac{4x}{3}\le 100.\]\[-75 \le x \le 75.\]
 In this case, for $y$ to be integer $3 | x,$ so we substitute $x=3t.$\[-75 \le 3t \le 75.\]\[-25 \le t \le 25.\] This gives us $51$ solutions.</p>
-<p>Finally we overcount one case which is the intersection of the $2$ lines (which are $y=@@MATH24@@frac{4x}{3}$) or the point $(0,0).$ Therefore our answer is $67+51-1=\boxed{117}$</p>
-<p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Mathkiddus" title="User:Mathkiddus">mathkiddus</a></p></div>
-<div class="prob"><div class="qn">Problem 5 &nbsp; <span class="ans">答案 279</span></div><p style="color:#744210"><i>题目：</i></p><p>There are $8!= 40320$ eight-digit positive integers that use each of the digits $1, 2, 3, 4, 5, 6, 7, 8$ exactly once. Let $N$ be the number of these integers that are divisible by $22$. Find the difference between $N$ and $2025$.</p><div class="cn"><span class="cnlabel">中文：</span><p>恰好使用数字 $1,2,3,4,5,6,7,8$ 各一次的八位正整数共 $8!=40320$ 个。设 $N$ 为其中能被 $22$ 整除的个数。求 $N$ 与 $2025$ 的差。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>Notice that if the 8-digit number is divisible by $22$, it must have an even units digit. Therefore, we can break it up into cases and let the last digit be either $2, 4, 6,$ or $8$. Due to symmetry, upon finding the total count of one of these last digit cases (we look at last digit $2$ here), we may multiply the resulting value by $4$.</p>
+<p>Finally we overcount one case which is the intersection of the $2$ lines (which are $y=\frac{-3x}{2}$ and $y=\frac{4x}{3}$) or the point $(0,0).$ Therefore our answer is $67+51-1=\boxed{117}$</p>
+<p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Mathkiddus" title="User:Mathkiddus">mathkiddus</a></p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>我们先因式分解：$12x^2-xy-6y^2=(3x+2y)(4x-3y)=0$。由于右边为 $0$，我们有两种情形。</p>
+<p>$\underline{\text{情形 1：}}\text{ } 3x+2y = 0$</p>
+<p>此时有 $y=\frac{-3x}{2}$。利用 $y$ 的取值范围，有
+\[-100\le\frac{-3x}{2}\le 100.\]\[\frac{200}{3}\ge x \ge \frac{-200}{3}.\]
+此外，为使 $y$ 为整数，需 $2 | x$，于是代入 $x=2k$。\[\frac{200}{3}\ge 2k \ge \frac{-200}{3}.\]\[\frac{100}{3}\ge k \ge \frac{-100}{3}.\] 由此 $k$ 的解从 $-33$ 到 $33$，共 $67$ 个解。</p>
+<p>$\underline{\text{情形 2：}}\text{ } 4x-3y = 0$</p>
+<p>另一方面，有 $y=\frac{4x}{3}$。由取值范围有
+\[-100\le\frac{4x}{3}\le 100.\]\[-75 \le x \le 75.\]
+此时，为使 $y$ 为整数，需 $3 | x$，于是代入 $x=3t$。\[-75 \le 3t \le 75.\]\[-25 \le t \le 25.\] 这给出 $51$ 个解。</p>
+<p>最后我们重复计算了一种情形，即两条直线（即 $y=\frac{-3x}{2}$ 与 $y=\frac{4x}{3}$）的交点，也就是点 $(0,0)$。因此答案为 $67+51-1=\boxed{117}$。</p>
+<p>~ mathkiddus</p></div></div>
+<div class="prob"><div class="qn">Problem 5 &nbsp; <span class="ans">答案 279</span></div><p style="color:#744210"><i>题目：</i></p><p>There are $8!= 40320$ eight-digit positive integers that use each of the digits $1, 2, 3, 4, 5, 6, 7, 8$ exactly once. Let $N$ be the number of these integers that are divisible by $22$. Find the difference between $N$ and $2025$.</p><div class="cn"><span class="cnlabel">中文题目：</span><p>恰好使用数字 $1,2,3,4,5,6,7,8$ 各一次的八位正整数共 $8!=40320$ 个。设 $N$ 为其中能被 $22$ 整除的个数。求 $N$ 与 $2025$ 的差。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>Notice that if the 8-digit number is divisible by $22$, it must have an even units digit. Therefore, we can break it up into cases and let the last digit be either $2, 4, 6,$ or $8$. Due to symmetry, upon finding the total count of one of these last digit cases (we look at last digit $2$ here), we may multiply the resulting value by $4$.</p>
 <p>Now, we just need to find the number of positions of the remaining numbers such that the units digit is $2$ and the number is divisible by $11$. Denote the odd numbered positions to be $a_1, a_3, a_5, a_7$ and the even numbered positions to be $a_2, a_4, a_6$ (recall $a_8=2$). By the divisibility rule of $11$, we must have:
 \[(a_1 + a_3 + a_5 + a_7) - (a_2 + a_4 + a_6 + 2)\]
 which is congruent to $0\hspace{2mm}(\text{mod}\hspace{1mm}11)$. Therefore, after simplifying, we must have:
@@ -59,58 +80,133 @@ Now consider $a_1+ a_2 +\ldots + a_7=1+2+\ldots+8-2=34\equiv1\hspace{2mm}(\text{
 \[(a_1 + a_2 + \ldots+ a_7) - 2(a_2 + a_4 + a_6)\equiv2\hspace{2mm}(\text{mod}\hspace{1mm}11)\]
 which means that
 \[a_2 + a_4 + a_6\equiv5\hspace{2mm}(\text{mod}\hspace{1mm}11)\]
-Notice that the minimum of $a_2+a_4+a_6$ is $1 + 3 + 4 = 8$ and the maximum is $6 + 7 + 8 = 21$. The only possible number congruent to $5@@MATH15@@text{mod}@@MATH16@@[(1, 7, 8), (3, 5, 8), (3, 6, 7), (4, 5, 7)@@MATH17@@cdot6@@MATH18@@cdot4=2304$ eight-digit positive integers. Thus, the positive difference between $N$ and $2025$ is $2304 - 2025 = @@MATH19@@mod 10$.</p></div>
-<div class="prob"><div class="qn">Problem 6 &nbsp; <span class="ans">答案 504</span></div><p style="color:#744210"><i>题目：</i></p><p>An isosceles trapezoid has an inscribed circle tangent to each of its four sides. The radius of the circle is $3$, and the area of the trapezoid is $72$. Let the parallel sides of the trapezoid have lengths $r$ and $s$, with $r \neq s$. Find $r^2 + s^2$.</p><div class="cn"><span class="cnlabel">中文：</span><p>一个等腰梯形有一个与四边都相切的内切圆。该圆半径为 $3$，梯形面积为 $72$。设梯形两条平行边长为 $r$ 和 $s$（$r \neq s$）。求 $r^2+s^2$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>To begin with, because of tangents from the circle to the bases, the height is $2@@MATH0@@frac{h(b_1+b_2)}{2}.$ Plugging in our known values we have \[\frac{6(r+s)}{2}=72.\]\[r+s=24.\]
+Notice that the minimum of $a_2+a_4+a_6$ is $1 + 3 + 4 = 8$ and the maximum is $6 + 7 + 8 = 21$. The only possible number congruent to $5\hspace{2mm}(\text{mod}\hspace{1mm}11)$ in this range is $16$. All that remains is to count all the possible sums of $16$ using the values $1, 3, 4, 5, 6, 7, 8$. There are a total of four possibilities:
+\[(1, 7, 8), (3, 5, 8), (3, 6, 7), (4, 5, 7)\]
+The arrangement of the odd-positioned numbers ($a_1,a_3,a_5,a_7$) does not matter, so there are $4!=24$ arrangements of these numbers. Recall that the $4$ triplets above occupy $a_2,a_4,a_6$; the number of arrangements is $3!=6$. Thus, we have $24\cdot6\cdot4=576$ possible numbers such that the units digit is $2$. Since we claimed symmetry over the rest of the units digits, we must multiply by $4$, resulting in $576\cdot4=2304$ eight-digit positive integers. Thus, the positive difference between $N$ and $2025$ is $2304 - 2025 = \boxed{279}$.</p>
+<p>~ilikemath247365</p>
+<p>~LaTeX by eevee9406</p>
+<h3>Proof of symmetry on last even digit</h3>
+<p>To see the symmetry in the cases on the last digit $a_8$, you can cycle through the cases bijectively by adding 2 to each digit $\mod 10$.</p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>注意到若这个八位数能被 $22$ 整除，则其个位数字必为偶数。因此我们可以分情形讨论，令末位数字为 $2, 4, 6,$ 或 $8$。由对称性，在求出其中一种末位情形的总数后（这里以末位为 $2$ 来分析），可将所得结果乘以 $4$。</p>
+<p>现在，我们只需求出使个位为 $2$ 且整个数能被 $11$ 整除时，其余数字的排列个数。记奇数位为 $a_1, a_3, a_5, a_7$，偶数位为 $a_2, a_4, a_6$（注意 $a_8=2$）。由 $11$ 的整除规则，我们必须有
+\[(a_1 + a_3 + a_5 + a_7) - (a_2 + a_4 + a_6 + 2)\]
+模 $11$ 同余于 $0\hspace{2mm}(\text{mod}\hspace{1mm}11)$。因此，化简后必有
+\[a_1 - a_2 + a_3 - a_4 + a_5 - a_6 + a_7\equiv2\hspace{2mm}(\text{mod}\hspace{1mm}11)\]
+现在考虑 $a_1+ a_2 +\ldots + a_7=1+2+\ldots+8-2=34\equiv1\hspace{2mm}(\text{mod}\hspace{1mm}11)$。因此
+\[(a_1 + a_2 + \ldots+ a_7) - 2(a_2 + a_4 + a_6)\equiv2\hspace{2mm}(\text{mod}\hspace{1mm}11)\]
+这意味着
+\[a_2 + a_4 + a_6\equiv5\hspace{2mm}(\text{mod}\hspace{1mm}11)\]
+注意 $a_2+a_4+a_6$ 的最小值是 $1 + 3 + 4 = 8$，最大值是 $6 + 7 + 8 = 21$。在此范围内唯一模 $5\hspace{2mm}(\text{mod}\hspace{1mm}11)$ 的数是 $16$。剩下的就是用数值 $1, 3, 4, 5, 6, 7, 8$ 数出所有和为 $16$ 的可能。共有四种可能：
+\[(1, 7, 8), (3, 5, 8), (3, 6, 7), (4, 5, 7)\]
+奇数位数字（$a_1,a_3,a_5,a_7$）的排列方式无关紧要，所以有 $4!=24$ 种排列。回忆上面的 $4$ 个三元组占据 $a_2,a_4,a_6$，其排列数为 $3!=6$。于是，使个位为 $2$ 的可能数共有 $24\cdot6\cdot4=576$ 个。由于我们已声明对其余个位数字也有对称性，故须乘以 $4$，得到 $576\cdot4=2304$ 个八位正整数。因此 $N$ 与 $2025$ 的正差为 $2304 - 2025 = \boxed{279}$。</p>
+<p>~ilikemath247365</p>
+<p>~LaTeX 由 eevee9406 整理</p>
+<h3>末位偶数对称性的证明</h3>
+<p>要看出在末位数字 $a_8$ 上各情形的对称性，可以通过将每个数字模 $10$ 加 $2$，双射地遍历各情形。</p></div></div>
+<div class="prob"><div class="qn">Problem 6 &nbsp; <span class="ans">答案 504</span></div><p style="color:#744210"><i>题目：</i></p><p>An isosceles trapezoid has an inscribed circle tangent to each of its four sides. The radius of the circle is $3$, and the area of the trapezoid is $72$. Let the parallel sides of the trapezoid have lengths $r$ and $s$, with $r \neq s$. Find $r^2 + s^2$.</p><div class="cn"><span class="cnlabel">中文题目：</span><p>一个等腰梯形有一个与四边都相切的内切圆。该圆半径为 $3$，梯形面积为 $72$。设梯形两条平行边长为 $r$ 和 $s$（$r \neq s$）。求 $r^2+s^2$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>To begin with, because of tangents from the circle to the bases, the height is $2\cdot3=6.$ The formula for the area of a trapezoid is $\frac{h(b_1+b_2)}{2}.$ Plugging in our known values we have \[\frac{6(r+s)}{2}=72.\]\[r+s=24.\]
 Next, we use Pitot's Theorem which states for tangential quadrilaterals $AB+CD=AD+BC.$ Since we are given $ABCD$ is an isosceles trapezoid we have $AD=BC=x.$ Using Pitot's we find, \[AB+CD=r+s=2x=24.\]\[x=12.\] Finally we can use the Pythagorean Theorem by dropping an altitude from D, \[\left(\frac{r - s}{2}\right)^2 + 6^2 = 12^2.\]\[\left(\frac{r-s}{2}\right)^2=108.\]\[(r-s)^2=432.\] Noting that $\frac{(r + s)^2 + (r - s)^2}{2} = r^2 + s^2$ we find, \[\frac{(24^2+432)}{2}=\boxed{504}\]</p>
-<p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Mathkiddus" title="User:Mathkiddus">mathkiddus</a></p></div>
-<div class="prob"><div class="qn">Problem 7 &nbsp; <span class="ans">答案 821</span></div><p style="color:#744210"><i>题目：</i></p><p>The twelve letters $A$,$B$,$C$,$D$,$E$,$F$,$G$,$H$,$I$,$J$,$K$, and $L$ are randomly grouped into six pairs of letters. The two letters in each pair are placed next to each other in alphabetical order to form six two-letter words, and then those six words are listed alphabetically. For example, a possible result is $AB$, $CJ$, $DG$, $EK$, $FL$, $HI$. The probability that the last word listed contains $G$ is $\frac mn$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.</p><div class="cn"><span class="cnlabel">中文：</span><p>将十二个字母 $A,B,C,D,E,F,G,H,I,J,K,L$ 随机分成六对。每对的两个字母按字母顺序相邻排列成一个两字母"单词"，再将这六个单词按字母顺序排列。例如一种结果是 $AB, CJ, DG, EK, FL, HI$。排在最后的单词含有 $G$ 的概率为 $\frac mn$，其中 $m$ 和 $n$ 互质。求 $m+n$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>Note that order does not matter here. This is because any permutation of the $6$ pairs will automatically get ordered in alphabetical order. The same is true for within each of the pairs. In other words, $AB@@MATH0@@DI@@MATH1@@FK@@MATH2@@AB@@MATH3@@EJ@@MATH4@@GL$.</p>
+<p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Mathkiddus" title="User:Mathkiddus">mathkiddus</a></p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>首先，由于圆与两底相切，高为 $2\cdot3=6$。梯形面积公式为 $\frac{h(b_1+b_2)}{2}$。代入已知值，有\[\frac{6(r+s)}{2}=72.\]\[r+s=24.\]
+接下来，我们使用 Pitot 定理：对于有内切圆的四边形（切线四边形），$AB+CD=AD+BC$。由于题目给出 $ABCD$ 是等腰梯形，故 $AD=BC=x$。由 Pitot 定理可得\[AB+CD=r+s=2x=24.\]\[x=12.\] 最后，我们可以从 $D$ 作高，利用勾股定理\[\left(\frac{r - s}{2}\right)^2 + 6^2 = 12^2.\]\[\left(\frac{r-s}{2}\right)^2=108.\]\[(r-s)^2=432.\] 注意到 $\frac{(r + s)^2 + (r - s)^2}{2} = r^2 + s^2$，我们求得\[\frac{(24^2+432)}{2}=\boxed{504}\]</p>
+<p>~ mathkiddus</p></div></div>
+<div class="prob"><div class="qn">Problem 7 &nbsp; <span class="ans">答案 821</span></div><p style="color:#744210"><i>题目：</i></p><p>The twelve letters $A$,$B$,$C$,$D$,$E$,$F$,$G$,$H$,$I$,$J$,$K$, and $L$ are randomly grouped into six pairs of letters. The two letters in each pair are placed next to each other in alphabetical order to form six two-letter words, and then those six words are listed alphabetically. For example, a possible result is $AB$, $CJ$, $DG$, $EK$, $FL$, $HI$. The probability that the last word listed contains $G$ is $\frac mn$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.</p><div class="cn"><span class="cnlabel">中文题目：</span><p>将十二个字母 $A,B,C,D,E,F,G,H,I,J,K,L$ 随机分成六对。每对的两个字母按字母顺序相邻排列成一个两字母"单词"，再将这六个单词按字母顺序排列。例如一种结果是 $AB, CJ, DG, EK, FL, HI$。排在最后的单词含有 $G$ 的概率为 $\frac mn$，其中 $m$ 和 $n$ 互质。求 $m+n$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>Note that order does not matter here. This is because any permutation of the $6$ pairs will automatically get ordered in alphabetical order. The same is true for within each of the pairs. In other words, $AB@@MATH0@@DI@@MATH1@@FK@@MATH2@@AB@@MATH3@@EJ@@MATH4@@GL$.</p>
 <p>We construct two cases: $G$ is the first letter of the last word and $G$ is the second letter of the last word.</p>
-<p>Our first case is when $G$ is the first letter of the last word. Then the second letter of the last word must be one of $H, I, J, K, L$. Call that set of $5$ letters $@@MATH5@@Omega$. The other $4$ letters of $@@MATH6@@Sigma$. Exactly one of the words must have two letters from $@@MATH7@@Sigma$ and the second letter from $@@MATH8@@Sigma$ and $@@MATH9@@cdot {6@@MATH10@@cdot 4! = 5 @@MATH11@@cdot 24 = 1800$ orderings.</p>
-<p>The second case is when $G$ is the second letter of the last word. You can see that the first letter of that word must be $F$. Otherwise, that word cannot be the last word. The other $5$ words must start with $A$, $B$, $C$, $D$, and $E$. The second letter of each of those words will come from $@@MATH12@@Omega$ to one of $A, B, C, D, E$. There are therefore $5! = 120$ orderings in the case.</p>
-<p>In total, there are $1800+120 = 1920$ orderings. However, we want the probability. The number of ways to put the $12$ letters into pairs is $11 @@MATH13@@cdot 7 @@MATH14@@cdot 3 @@MATH15@@cdot 9 @@MATH16@@cdot 5 @@MATH17@@cdot 1$ options.</p>
-<p>The probability is therefore $@@MATH18@@cdot 9 @@MATH19@@cdot 5 @@MATH20@@cdot 1} = @@MATH21@@boxed{821}$.</p>
+<p>Our first case is when $G$ is the first letter of the last word. Then the second letter of the last word must be one of $H, I, J, K, L$. Call that set of $5$ letters $\Omega$. There are $5$ ways to choose the second letter from $\Omega$. The other $4$ letters of $\Omega$ must be used in the other $5$ words.</p>
+<p>For the other 5 words, each of their first letters must be before $G$ in the alphabet. Otherwise, the word with $G$ will not be the last. There are $6$ letters before $G$: $A,B,C,D,E,F$. Call that set of $6$ letters $\Sigma$. Exactly one of the words must have two letters from $\Sigma$. The other 4 will have their first letter from $\Sigma$ and the second letter from $\Omega$. There are $4!$ ways to determine the possible pairings of letters from $\Sigma$ and $\Omega$, respectively.</p>
+<p>Therefore, this case has $5 \cdot {6\choose{2}} \cdot 4! = 5 \cdot 15 \cdot 24 = 1800$ orderings.</p>
+<p>The second case is when $G$ is the second letter of the last word. You can see that the first letter of that word must be $F$. Otherwise, that word cannot be the last word. The other $5$ words must start with $A$, $B$, $C$, $D$, and $E$. The second letter of each of those words will come from $\Omega$. There will be $5!$ ways to distribute the elements of $\Omega$ to one of $A, B, C, D, E$. There are therefore $5! = 120$ orderings in the case.</p>
+<p>In total, there are $1800+120 = 1920$ orderings. However, we want the probability. The number of ways to put the $12$ letters into pairs is $11 \cdot 9 \cdot 7 \cdot 5 \cdot 3 \cdot 1$. This is true because we can say this: Start with $A$. It has $11$ options for who it will partner with. There are now $10$ letters left. Pick one of those letters. It has $9$ options for who it will partner with. There are now $8$ letters left. Continue until there are only $2$ letters left, and there is only $1$ option for that last word. Therefore, there will be $11 \cdot 9 \cdot 7 \cdot 5 \cdot 3 \cdot 1$ options.</p>
+<p>The probability is therefore $\frac{1920}{11 \cdot 9 \cdot 7 \cdot 5 \cdot 3 \cdot 1} = \frac{128}{693}$. The requested answer is $128 + 693 = \boxed{821}$.</p>
 <p>~lprado</p>
-<p>Minor latex edits by <a href="https://artofproblemsolving.com/wiki/index.php?title=User:T3chn0b14d3&amp;action=edit&amp;redlink=1" title="User:T3chn0b14d3 (page does not exist)">T3CHN0B14D3</a></p></div>
+<p>Minor latex edits by <a href="https://artofproblemsolving.com/wiki/index.php?title=User:T3chn0b14d3&amp;action=edit&amp;redlink=1" title="User:T3chn0b14d3 (page does not exist)">T3CHN0B14D3</a></p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>注意此处顺序无关紧要。这是因为 $6$ 对的任何排列都会自动按字母顺序排好。每对内部的两个字母也是如此。换句话说，$AB@@MATH0@@DI@@MATH1@@FK@@MATH2@@AB@@MATH3@@EJ@@MATH4@@GL$ 计为相同。</p>
+<p>我们分两种情形：$G$ 是最后一个单词的第一个字母，以及 $G$ 是最后一个单词的第二个字母。</p>
+<p>第一种情形是 $G$ 为最后一个单词的第一个字母。则该单词的第二个字母必为 $H, I, J, K, L$ 之一。称这 $5$ 个字母构成的集合为 $\Omega$。从 $\Omega$ 中选第二个字母有 $5$ 种方式。$\Omega$ 中剩下的 $4$ 个字母必须用在其余的 $5$ 个单词中。</p>
+<p>对于其余 $5$ 个单词，它们的首字母都必须在字母表中排在 $G$ 之前，否则含 $G$ 的单词就不会是最后一个。$G$ 之前有 $6$ 个字母：$A,B,C,D,E,F$。称这 $6$ 个字母构成的集合为 $\Sigma$。这些单词中恰有一个的两个字母都来自 $\Sigma$。其余 $4$ 个单词的首字母来自 $\Sigma$，第二个字母来自 $\Omega$。把 $\Sigma$ 与 $\Omega$ 的字母配对有 $4!$ 种方式。</p>
+<p>因此，这种情形有 $5 \cdot {6\choose{2}} \cdot 4! = 5 \cdot 15 \cdot 24 = 1800$ 种排列。</p>
+<p>第二种情形是 $G$ 为最后一个单词的第二个字母。可以看出该单词的首字母必为 $F$，否则该单词不会是最后一个。其余 $5$ 个单词必须分别以 $A$、$B$、$C$、$D$、$E$ 开头。这些单词的第二个字母都来自 $\Omega$。将 $\Omega$ 的元素分配给 $A, B, C, D, E$ 之一有 $5!$ 种方式。因此这种情形有 $5! = 120$ 种排列。</p>
+<p>总计有 $1800+120 = 1920$ 种排列。然而，我们要求的是概率。把 $12$ 个字母分成对的方式有 $11 \cdot 9 \cdot 7 \cdot 5 \cdot 3 \cdot 1$ 种。理由如下：从 $A$ 开始，它有 $11$ 个可能的搭档。现在还剩 $10$ 个字母，挑出其中一个，它有 $9$ 个可能的搭档。现在还剩 $8$ 个字母，继续下去，直到只剩 $2$ 个字母，最后一个单词只有 $1$ 种可能。因此共有 $11 \cdot 9 \cdot 7 \cdot 5 \cdot 3 \cdot 1$ 种。</p>
+<p>因此概率为 $\frac{1920}{11 \cdot 9 \cdot 7 \cdot 5 \cdot 3 \cdot 1} = \frac{128}{693}$。所求答案为 $128 + 693 = \boxed{821}$。</p>
+<p>~lprado</p>
+<p>~T3CHN0B14D3 的少量 LaTeX 编辑</p></div></div>
 <div class="prob"><div class="qn">Problem 8 &nbsp; <span class="ans">答案 77</span></div><p style="color:#744210"><i>题目：</i></p><p>Let $k$ be a real number such that the system
-\begin{align*} &|25 + 20i - z| = 5 @@MATH0@@ &|z - 4 - k| = |z - 3i - k| \end{align*}has exactly one complex solution $z$. The sum of all possible values of $k$ can be written as $@@MATH2@@sqrt{-1}$.</p><div class="cn"><span class="cnlabel">中文：</span><p>设 $k$ 为实数，使方程组 \begin{align*} &|25 + 20i - z| = 5 @@MATH0@@ &|z - 4 - k| = |z - 3i - k| \end{align*} 恰有一个复数解 $z$。所有可能的 $k$ 值之和可写成 $@@MATH2@@sqrt{-1}$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p><em>[图：原题附几何图，见 AoPS 原页]</em> 
+\begin{align<em>} &amp;|25 + 20i - z| = 5 \ &amp;|z - 4 - k| = |z - 3i - k| \end{align</em>}has exactly one complex solution $z$. The sum of all possible values of $k$ can be written as $\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$. Here $i = \sqrt{-1}$.</p><div class="cn"><span class="cnlabel">中文题目：</span><p>设 $k$ 为实数，使方程组 \begin{align<em>} &amp;|25 + 20i - z| = 5 \ &amp;|z - 4 - k| = |z - 3i - k| \end{align</em>} 恰有一个复数解 $z$。所有可能的 $k$ 值之和可写成 $\frac{m}{n}$，其中 $m$ 和 $n$ 互质。求 $m+n$。这里 $i=\sqrt{-1}$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p><em>[图：原题附几何图，见 AoPS 原页]</em> 
 The complex number $z$ must satisfy the following conditions on the complex plane:</p>
 <p>$1.$ The magnitude between $z$ and $(25,20)$ is $5.$ This can be represented by drawing a circle with center $(25,20)$ and radius $5.$</p>
 <p>$2.$ It is equidistant from the points $(4+k,0)$ and $(k,3).$ Hence it must lie on the perpendicular bisector of the line connecting these points.</p>
 <p>For $z$ to have one solution, the perpendicular bisector of the segment connecting the two points must be tangent to the circle.
-This bisector must pass the midpoint, $(2+k,@@MATH0@@frac{4}{3}.$ The segment connecting the point of tangency to the center of the circle has slope $@@MATH1@@[@@MATH2@@frac{3}{2}-23}{k+2-21}=@@MATH3@@] or @@MATH4@@frac{@@MATH5@@frac{4}{3},@@MATH6@@frac{23}{8}$ or $@@MATH7@@frac{73}{4} @@MATH8@@boxed{077}.$</p>
-<p>~nevergonnagiveup</p></div>
-<div class="prob"><div class="qn">Problem 9 &nbsp; <span class="ans">答案 62</span></div><p style="color:#744210"><i>题目：</i></p><p>The parabola with equation $y = x^2 - 4$ is rotated $60^{@@MATH0@@frac{a - \sqrt{b}}{c}$, where $a$, $b$, and $c$ are positive integers, and $a$ and $c$ are relatively prime. Find $a + b + c$.</p><div class="cn"><span class="cnlabel">中文：</span><p>方程为 $y=x^2-4$ 的抛物线绕原点逆时针旋转 $60^@@MATH0@@frac{a-\sqrt{b}}{c}$，其中 $a,b,c$ 为正整数且 $a$ 与 $c$ 互质。求 $a+b+c$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>We need to relate the rotation to something simpler because substituting the equation of the rotated parabola into the original will give us a quartic.
+This bisector must pass the midpoint, $(2+k,\frac{3}{2}),$ and have slope $\frac{4}{3}.$ The segment connecting the point of tangency to the center of the circle has slope $\frac{-3}{4},$ meaning the points of tangency can be $(29,17)$ or $(21,23).$ Solving the equation for the slope of the perpendicular bisector gives \[\frac{\frac{3}{2}-23}{k+2-21}=\frac{4}{3}\] or \[\frac{\frac{3}{2}-17}{k+2-29}=\frac{4}{3},\] giving $k=\frac{23}{8}$ or $\frac{123}{8}$, having a sum of $\frac{73}{4} \Longrightarrow \boxed{077}.$</p>
+<p>~nevergonnagiveup</p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>[图：见AoPS] 
+复数 $z$ 必须在复平面上满足以下条件：</p>
+<p>$1.$ $z$ 与 $(25,20)$ 之间的模长为 $5$。这可以用一个圆心为 $(25,20)$、半径为 $5$ 的圆来表示。</p>
+<p>$2.$ 它到点 $(4+k,0)$ 和 $(k,3)$ 的距离相等。因此它必须落在连接这两点的线段的垂直平分线上。</p>
+<p>为使 $z$ 只有一个解，连接这两点的线段的垂直平分线必须与该圆相切。
+这条垂直平分线必须经过中点 $(2+k,\frac{3}{2})$，且斜率为 $\frac{4}{3}$。连接切点与圆心的线段斜率为 $\frac{-3}{4}$，这意味着切点可以是 $(29,17)$ 或 $(21,23)$。求解关于垂直平分线斜率的方程，得到\[\frac{\frac{3}{2}-23}{k+2-21}=\frac{4}{3}\] 或 \[\frac{\frac{3}{2}-17}{k+2-29}=\frac{4}{3},\] 给出 $k=\frac{23}{8}$ 或 $\frac{123}{8}$，其和为 $\frac{73}{4} \Longrightarrow \boxed{077}$。</p>
+<p>~nevergonnagiveup</p></div></div>
+<div class="prob"><div class="qn">Problem 9 &nbsp; <span class="ans">答案 62</span></div><p style="color:#744210"><i>题目：</i></p><p>The parabola with equation $y = x^2 - 4$ is rotated $60^{\circ}$ counterclockwise around the origin. The unique point in the fourth quadrant where the original parabola and its image intersect has $y$-coordinate $\frac{a - \sqrt{b}}{c}$, where $a$, $b$, and $c$ are positive integers, and $a$ and $c$ are relatively prime. Find $a + b + c$.</p><div class="cn"><span class="cnlabel">中文题目：</span><p>方程为 $y=x^2-4$ 的抛物线绕原点逆时针旋转 $60^\circ$。原抛物线与其旋转后的像在第四象限的唯一交点，其 $y$ 坐标为 $\frac{a-\sqrt{b}}{c}$，其中 $a,b,c$ 为正整数且 $a$ 与 $c$ 互质。求 $a+b+c$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>We need to relate the rotation to something simpler because substituting the equation of the rotated parabola into the original will give us a quartic.
  <em>[图：原题附几何图，见 AoPS 原页]</em> </p>
 <p>Notice that the vertices of the original parabola and its image are symmetrical about the angle bisector of the 60 degree rotation (shown in green).</p>
-<p>The equation of this line is $y = -@@MATH0@@circ @@MATH1@@sqrt{3}x.$ This means that the point lying on this line and the original parabola must be the intersection of the new and original images since it won't change position with the rotation.</p>
+<p>The equation of this line is $y = -\tan60^\circ \cdot y = -\sqrt{3}x.$ This means that the point lying on this line and the original parabola must be the intersection of the new and original images since it won't change position with the rotation.</p>
 <p>We substitute $y = x^2 - 4:$\[x^2 - 4 = -\sqrt{3}x\]\[x = \frac{-\sqrt{3} + \sqrt{19}}{2}.\]</p>
-<p>Then $y = (@@MATH6@@sqrt{3} + @@MATH7@@frac{3 - @@MATH8@@boxed{62}.$</p>
-<p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Grogg007" title="User:Grogg007">grogg007</a>, ~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Mathkiddus" title="User:Mathkiddus">mathkiddus</a>, ~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Athreyay" title="User:Athreyay">athreyay</a></p></div>
-<div class="prob"><div class="qn">Problem 10 &nbsp; <span class="ans">答案 81</span></div><p style="color:#744210"><i>题目：</i></p><p>The $27$ cells of a $3 @@MATH0@@times 3$ blocks heavily outlined in the example below contains $9$ different numbers, as in the first three rows of a Sudoku puzzle.</p>
+<p>Then $y = (\frac{-\sqrt{3} + \sqrt{19}}{2})^2 - 4 = \frac{3 - \sqrt{57}}{2}.$$57 + 3 + 2 = \boxed{62}.$</p>
+<p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Grogg007" title="User:Grogg007">grogg007</a>, ~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Mathkiddus" title="User:Mathkiddus">mathkiddus</a>, ~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Athreyay" title="User:Athreyay">athreyay</a></p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>我们需要把旋转与某种更简单的东西联系起来，因为把旋转后抛物线的方程代入原方程会得到一个四次方程。
+ [图：见AoPS] </p>
+<p>注意到原抛物线与其像的顶点关于 $60$ 度旋转的角平分线（图中绿色）对称。</p>
+<p>这条直线的方程为 $y = -\tan60^\circ \cdot x = -\sqrt{3}x$。这意味着同时落在这条直线上和原抛物线上的点必是新像与原像的交点，因为它在旋转下位置不变。</p>
+<p>我们代入 $y = x^2 - 4$：\[x^2 - 4 = -\sqrt{3}x\]\[x = \frac{-\sqrt{3} + \sqrt{19}}{2}.\]</p>
+<p>于是 $y = (\frac{-\sqrt{3} + \sqrt{19}}{2})^2 - 4 = \frac{3 - \sqrt{57}}{2}.$ $57 + 3 + 2 = \boxed{62}.$</p>
+<p>~ grogg007, ~ mathkiddus, ~ athreyay</p></div></div>
+<div class="prob"><div class="qn">Problem 10 &nbsp; <span class="ans">答案 81</span></div><p style="color:#744210"><i>题目：</i></p><p>The $27$ cells of a $3 \times 9$ grid are filled in using the numbers $1$ through $9$ so that each row contains $9$ different numbers, and each of the three $3 \times 3$ blocks heavily outlined in the example below contains $9$ different numbers, as in the first three rows of a Sudoku puzzle.</p>
 <p><em>[图：原题附几何图，见 AoPS 原页]</em> </p>
-<p>The number of different ways to fill such a grid can be written as $p^a @@MATH1@@cdot r^c @@MATH2@@cdot a + q @@MATH3@@cdot c + s \cdot d$.</p><div class="cn"><span class="cnlabel">中文：</span><p>用数字 $1$ 到 $9$ 填入 $3@@MATH0@@times3$ 区块各自含 $9$ 个不同数字（如同数独的前三行）。填法总数可写成 $p^a @@MATH1@@cdot r^c @@MATH2@@cdot a + q@@MATH3@@cdot c + s\cdot d$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>We will fill out the grid row by row. Note that there are $9!=2^7@@MATH0@@cdot 5@@MATH1@@times 3$ squares).</p>
+<p>The number of different ways to fill such a grid can be written as $p^a \cdot q^b \cdot r^c \cdot s^d$ where $p$, $q$, $r$, and $s$ are distinct prime numbers and $a$, $b$, $c$, $d$ are positive integers. Find $p \cdot a + q \cdot b + r \cdot c + s \cdot d$.</p><div class="cn"><span class="cnlabel">中文题目：</span><p>用数字 $1$ 到 $9$ 填入 $3\times9$ 方格的 $27$ 个格子，使每行含 $9$ 个不同数字，且下例中粗线框出的三个 $3\times3$ 区块各自含 $9$ 个不同数字（如同数独的前三行）。填法总数可写成 $p^a \cdot q^b \cdot r^c \cdot s^d$，其中 $p,q,r,s$ 为不同素数，$a,b,c,d$ 为正整数。求 $p\cdot a + q\cdot b + r\cdot c + s\cdot d$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>We will fill out the grid row by row. Note that there are $9!=2^7\cdot 3^4\cdot 5\cdot 7$ ways to fill out the first row. For the second row, we will consider a little casework. WLOG let the first row be $123 | 456 | 789$ (bars indicate between the $3\times 3$ squares).</p>
 <p>Case 1: Every number from the first square goes to the second square. Then there is $1$ way along with $6^3$ orderings giving us $6^3$ cases.</p>
-<p>Case 2: Two of the first numbers go in the second square and the last number goes in the third. This results in $3@@MATH2@@cdot3$ ways to put the numbers along with $6^3$ orderings. Thus there are $27@@MATH3@@cdot 6^3$.</p>
-<p>There is $1$ way to place the last numbers in with $6^3$ orderings. Thus there are $2^7@@MATH4@@cdot 5@@MATH5@@cdot 56@@MATH6@@cdot 6^3 = 2^{16}@@MATH7@@cdot 5^1@@MATH8@@cdot 16+3@@MATH9@@cdot 1+7@@MATH10@@boxed{081}.$</p>
-<p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Zhenghua" title="User:Zhenghua">zhenghua</a></p></div>
-<div class="prob"><div class="qn">Problem 11 &nbsp; <span class="ans">答案 259</span></div><p style="color:#744210"><i>题目：</i></p><p>A piecewise linear function is defined by \[f(x) = \begin{cases} x &amp; \operatorname{if} ~ -1 \leq x &lt; 1 \\ 2 - x &amp; \operatorname{if} ~ 1 \leq x &lt; 3\end{cases}\] and $f(x + 4) = f(x)$ for all real numbers $x$. The graph of $f(x)$ has the sawtooth pattern depicted below.</p>
+<p>Case 2: Two of the first numbers go in the second square and the last number goes in the third. This results in $3\cdot3\cdot3$ ways to put the numbers along with $6^3$ orderings. Thus there are $27\cdot 6^3$ cases.</p>
+<p>Note that we didn't consider $2$ cases but these are symmetric so the number of ways to fill the second row is $56\cdot 6^3$.</p>
+<p>There is $1$ way to place the last numbers in with $6^3$ orderings. Thus there are $2^7\cdot 3^4\cdot 5\cdot 7 \cdot 56\cdot 6^3 \cdot 6^3 = 2^{16}\cdot 3^{10}\cdot 5^1\cdot 7^2$ ways to fill out our mini Sudoku puzzle. Thus the answer is $2\cdot 16+3\cdot 10 + 5\cdot 1+7\cdot 2 = \boxed{081}.$</p>
+<p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Zhenghua" title="User:Zhenghua">zhenghua</a></p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>我们将逐行填写网格。注意填第一行有 $9!=2^7\cdot 3^4\cdot 5\cdot 7$ 种方法。对于第二行，我们做一点分类讨论。不妨设第一行为 $123 | 456 | 789$（竖线表示 $3\times 3$ 方块之间的分隔）。</p>
+<p>情形 1：第一个方块中的每个数字都进入第二个方块。则有 $1$ 种方式，再加上 $6^3$ 种排序，共 $6^3$ 种情形。</p>
+<p>情形 2：前三个数字中有两个进入第二个方块，最后一个进入第三个方块。这导致 $3\cdot3\cdot3$ 种放置数字的方式，再加上 $6^3$ 种排序。因此有 $27\cdot 6^3$ 种情形。</p>
+<p>注意我们没有考虑 $2$ 种情形，但它们是对称的，所以填第二行的方法数为 $56\cdot 6^3$。</p>
+<p>填最后一行的数字有 $1$ 种方式，再加上 $6^3$ 种排序。因此填完这个迷你数独谜题的方法数为 $2^7\cdot 3^4\cdot 5\cdot 7 \cdot 56\cdot 6^3 \cdot 6^3 = 2^{16}\cdot 3^{10}\cdot 5^1\cdot 7^2$。因此答案为 $2\cdot 16+3\cdot 10 + 5\cdot 1+7\cdot 2 = \boxed{081}$。</p>
+<p>~ zhenghua</p></div></div>
+<div class="prob"><div class="qn">Problem 11 &nbsp; <span class="ans">答案 259</span></div><p style="color:#744210"><i>题目：</i></p><p>A piecewise linear function is defined by \[f(x) = \begin{cases} x & \operatorname{if} ~ -1 \leq x < 1 \\ 2 - x & \operatorname{if} ~ 1 \leq x < 3\end{cases}\] and $f(x + 4) = f(x)$ for all real numbers $x$. The graph of $f(x)$ has the sawtooth pattern depicted below.</p>
 <p><em>[图：原题附几何图，见 AoPS 原页]</em> </p>
-<p>The parabola $x = 34y^{2}$ intersects the graph of $f(x)$ at finitely many points. The sum of the $y$-coordinates of all these intersection points can be expressed in the form $@@MATH5@@sqrt{c}}{d}$, where $a$, $b$, $c$, and $d$ are positive integers such that $a$, $b$, $d$ have greatest common divisor equal to $1$, and $c$ is not divisible by the square of any prime. Find $a + b + c + d$.</p><div class="cn"><span class="cnlabel">中文：</span><p>分段线性函数定义为 \[f(x) = \begin{cases} x &amp; \operatorname{if} ~ -1 \leq x &lt; 1 \\ 2 - x &amp; \operatorname{if} ~ 1 \leq x &lt; 3\end{cases}\] 且对所有实数 $x$ 有 $f(x+4)=f(x)$。$f(x)$ 的图像呈下图的锯齿状。抛物线 $x=34y^2$ 与 $f(x)$ 的图像交于有限多个点。所有交点的 $y$ 坐标之和可表示为 $@@MATH5@@sqrt{c}}{d}$，其中 $a,b,c,d$ 为正整数，$a,b,d$ 的最大公约数为 $1$，且 $c$ 不被任何素数的平方整除。求 $a+b+c+d$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>Note that the part of $f(x)$ in the first and fourth quadrants consists of lines of the form $y = x - 4k$ and $y = 4k + 2 - x$ for integers $k @@MATH0@@tfrac{1}{34}$ by Vieta’s. Similarly, in the second equation, we get a sum of $-@@MATH1@@frac{33}{4}$ for the positive $y$ values and $k = @@MATH2@@frac{33}{4}$ for the positive y values and $k = @@MATH3@@frac{33}{4}$ rounds down to $8,$ but $@@MATH4@@frac{8}{34}.$ There are $9$ values of $k$ from $0 - 8,$ so the sum contributed by $y = x - 4k$ until $k = 8$ is $@@MATH5@@frac{1}{34}.$</p>
+<p>The parabola $x = 34y^{2}$ intersects the graph of $f(x)$ at finitely many points. The sum of the $y$-coordinates of all these intersection points can be expressed in the form $\tfrac{a + b\sqrt{c}}{d}$, where $a$, $b$, $c$, and $d$ are positive integers such that $a$, $b$, $d$ have greatest common divisor equal to $1$, and $c$ is not divisible by the square of any prime. Find $a + b + c + d$.</p><div class="cn"><span class="cnlabel">中文题目：</span><p>分段线性函数定义为 \[f(x) = \begin{cases} x & \operatorname{if} ~ -1 \leq x < 1 \\ 2 - x & \operatorname{if} ~ 1 \leq x < 3\end{cases}\] 且对所有实数 $x$ 有 $f(x+4)=f(x)$。$f(x)$ 的图像呈下图的锯齿状。抛物线 $x=34y^2$ 与 $f(x)$ 的图像交于有限多个点。所有交点的 $y$ 坐标之和可表示为 $\tfrac{a+b\sqrt{c}}{d}$，其中 $a,b,c,d$ 为正整数，$a,b,d$ 的最大公约数为 $1$，且 $c$ 不被任何素数的平方整除。求 $a+b+c+d$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>Note that the part of $f(x)$ in the first and fourth quadrants consists of lines of the form $y = x - 4k$ and $y = 4k + 2 - x$ for integers $k \geq 0$.
+Plugging in $x = 34y^2$ for $y = x - 4k$, we get $-34y^2 + y + 4k = 0,$ so the sum of the roots is $\tfrac{1}{34}$ by Vieta’s. Similarly, in the second equation, we get a sum of $-\tfrac{1}{34}.$</p>
+<p>The top peaks of the graph form the line $y = 1$ and the bottom peaks form $y = -1.$ So the parabola will cross the positive line once it reaches the point $(34,1),$ and it will cross the negative line at $(34, -1).$
+For $y = x - 4k,$ we find $k = \frac{33}{4}$ for the positive $y$ values and $k = \frac{35}{4}$ for the negative y values. Both round down to $8,$ so the parabola will stop intersecting $y = x - 4k$ entirely after $k = 8.$</p>
+<p>Now, for $y = 4k + 2 - x,$ we find $k = \frac{33}{4}$ for the positive y values and $k = \frac{31}{4}$ for the negative y values. $\frac{33}{4}$ rounds down to $8,$ but $\frac{31}{4}$ rounds down to $7,$ so the parabola will stop intersecting the negative $y$ values of $y = 4k + 2 - x$ after $k = 7,$ but it will intersect the positive $y$ values until $k = 8.$</p>
+<p>There are $8$ values of $k$ from $0 - 7,$ so the sum contributed by $y = 4k + 2 - x$ until $k = 7$ is $-\frac{8}{34}.$ There are $9$ values of $k$ from $0 - 8,$ so the sum contributed by $y = x - 4k$ until $k = 8$ is $\frac{9}{34}.$ Adding these together we get $\frac{1}{34}.$</p>
 <p>Now all that's left is to figure out the positive $y$ value at $k = 8$ for the line $y = 4k + 2 - x.$ We get \[34-34y^2 = y.\]\[y = \frac{-1 \pm \sqrt{68^2 + 1}}{68} = \frac{-1 + 5 \sqrt{185}}{68}.\] Adding our $\tfrac{1}{34}$ from earlier finally gives us $\frac{1 + 5 \sqrt{185}}{68} \implies \boxed{259}$.</p>
-<p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Grogg007" title="User:Grogg007">grogg007</a>, EpicBird08, <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Mathkiddus" title="User:Mathkiddus">mathkiddus</a></p></div>
-<div class="prob"><div class="qn">Problem 12 &nbsp; <span class="ans">答案 510</span></div><p style="color:#744210"><i>题目：</i></p><p>The set of points in $3$-dimensional coordinate space that lie in the plane $x+y+z=75$ whose coordinates satisfy the inequalities \[x-yz<y-zx<z-xy\]forms three disjoint convex regions. Exactly one of those regions has finite area. The area of this finite region can be expressed in the form $a\sqrt{b},$ where $a$ and $b$ are positive integers and $b$ is not divisible by the square of any prime. Find $a+b.$</p><div class="cn"><span class="cnlabel">中文：</span><p>三维坐标空间中位于平面 $x+y+z=75$ 内、且坐标满足不等式 \[x-yz<y-zx<z-xy\] 的点集构成三个互不相交的凸区域，其中恰有一个区域面积有限。该有限区域的面积可表示为 $a\sqrt{b}$，其中 $a,b$ 为正整数且 $b$ 不被任何素数的平方整除。求 $a+b$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>Rewriting we have $z=75-x-y.$</p>
+<p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Grogg007" title="User:Grogg007">grogg007</a>, EpicBird08, <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Mathkiddus" title="User:Mathkiddus">mathkiddus</a></p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>注意 $f(x)$ 在第一象限和第四象限的部分由形如 $y = x - 4k$ 和 $y = 4k + 2 - x$ 的直线组成，其中 $k \geq 0$ 为整数。
+对于 $y = x - 4k$，代入 $x = 34y^2$，得到 $-34y^2 + y + 4k = 0$，所以由韦达定理两根之和为 $\tfrac{1}{34}$。类似地，在第二类方程中，得到两根之和为 $-\tfrac{1}{34}$。</p>
+<p>图像顶部的尖峰构成直线 $y = 1$，底部的尖峰构成 $y = -1$。所以抛物线在到达点 $(34,1)$ 时会越过正向的那条线，在 $(34, -1)$ 时越过负向的那条线。
+对于 $y = x - 4k$，我们对正的 $y$ 值求得 $k = \frac{33}{4}$，对负的 $y$ 值求得 $k = \frac{35}{4}$。两者向下取整都是 $8$，所以抛物线在 $k = 8$ 之后将完全不再与 $y = x - 4k$ 相交。</p>
+<p>现在，对于 $y = 4k + 2 - x$，我们对正的 $y$ 值求得 $k = \frac{33}{4}$，对负的 $y$ 值求得 $k = \frac{31}{4}$。$\frac{33}{4}$ 向下取整为 $8$，但 $\frac{31}{4}$ 向下取整为 $7$，所以抛物线在 $k = 7$ 之后将不再与 $y = 4k + 2 - x$ 的负 $y$ 值相交，但它会与正 $y$ 值相交直到 $k = 8$。</p>
+<p>从 $0$ 到 $7$ 共有 $8$ 个 $k$ 值，所以 $y = 4k + 2 - x$ 在直到 $k = 7$ 时贡献的和为 $-\frac{8}{34}$。从 $0$ 到 $8$ 共有 $9$ 个 $k$ 值，所以 $y = x - 4k$ 在直到 $k = 8$ 时贡献的和为 $\frac{9}{34}$。把它们相加得到 $\frac{1}{34}$。</p>
+<p>现在剩下的就是算出直线 $y = 4k + 2 - x$ 在 $k = 8$ 处的正 $y$ 值。我们得到 \[34-34y^2 = y.\]\[y = \frac{-1 \pm \sqrt{68^2 + 1}}{68} = \frac{-1 + 5 \sqrt{185}}{68}.\] 加上前面的 $\tfrac{1}{34}$，最终得到 $\frac{1 + 5 \sqrt{185}}{68} \implies \boxed{259}$。</p>
+<p>~ grogg007, EpicBird08, mathkiddus</p></div></div>
+<div class="prob"><div class="qn">Problem 12 &nbsp; <span class="ans">答案 510</span></div><p style="color:#744210"><i>题目：</i></p><p>The set of points in $3$-dimensional coordinate space that lie in the plane $x+y+z=75$ whose coordinates satisfy the inequalities \[x-yz<y-zx<z-xy\]forms three disjoint convex regions. Exactly one of those regions has finite area. The area of this finite region can be expressed in the form $a\sqrt{b},$ where $a$ and $b$ are positive integers and $b$ is not divisible by the square of any prime. Find $a+b.$</p><div class="cn"><span class="cnlabel">中文题目：</span><p>三维坐标空间中位于平面 $x+y+z=75$ 内、且坐标满足不等式 \[x-yz<y-zx<z-xy\] 的点集构成三个互不相交的凸区域，其中恰有一个区域面积有限。该有限区域的面积可表示为 $a\sqrt{b}$，其中 $a,b$ 为正整数且 $b$ 不被任何素数的平方整除。求 $a+b$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>Rewriting we have $z=75-x-y.$</p>
 <p>From the inequality $x-yz<y-zx$ we can rewrite to get,
 \[x-y(75-x-y)< y-x(75-x-y).\]\[76x-76y+y^2-x^2<0.\]\[(76-x-y)(x-y)<0.\]</p>
 <p>Similarly from the inequality $y-zx<z-xy$ we rewrite to get,
 \[y-x(75-x-y)<(75-x-y)-xy.\]\[2y + 2xy + x^2 - 74x - 75 < 0.\]\[(x + 1)(2y + x - 75) < 0.\]
 Our next step is a visual which can be seen by roughly graphing the two inequalities. The first inequality is similar to a bow tie(you have to graph to see it lol) with bounds of $x-y=0$ and $76-x-y=0.$ The second one is a bow tie with edges of $x+1=0$ and $2y+x-75=0.$Here is the region of our solutions.
  <em>[图：原题附几何图，见 AoPS 原页]</em> 
-It is simple to find the intersections of those which are $(-1,38,38),(25,25,25)$ and $(-1,-1,77).$ The sidelengths of this triangle are $39\sqrt{2},26\sqrt{6},13\sqrt{6}$ which is a $30-60-90$ gives us an area of \[\frac{1}{2}(39\sqrt{2})(13\sqrt{6})=507\sqrt{3}\implies\boxed{510}.]</p>
-<p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Mathkiddus" title="User:Mathkiddus">mathkiddus</a> ~plang2008~hashbrown2009</p></div>
-<div class="prob"><div class="qn">Problem 13 &nbsp; <span class="ans">答案 204</span></div><p style="color:#744210"><i>题目：</i></p><p>Alex divides a disk into four quadrants with two perpendicular diameters intersecting at the center of the disk. He draws $25$ more line segments through the disk, drawing each segment by selecting two points at random on the perimeter of the disk in different quadrants and connecting these two points. Find the expected number of regions into which these $27$ line segments divide the disk.</p><div class="cn"><span class="cnlabel">中文：</span><p>Alex 用两条互相垂直、交于圆盘中心的直径将圆盘分成四个象限。他又画了 $25$ 条线段，画每条线段的方法是：在圆盘边缘的不同象限上随机选两点并连接。求这 $27$ 条线段将圆盘分成的区域数的期望值。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>First, we calculate the probability that two segments intersect each other. Let the quadrants be numbered $1$ through $4$ in the normal labeling of quadrants, let the two perpendicular diameters be labeled the $x$-axis and $y$-axis, and let the two segments be $A$ and $B.$</p>
-<p>$@@MATH2@@frac{1}{3}.$ WLOG let the two quadrants be $1$ and $3.$ We do cases in which quadrants segment $B$ lies in.</p>
+It is simple to find the intersections of those which are $(-1,38,38),(25,25,25)$ and $(-1,-1,77).$ The sidelengths of this triangle are $39\sqrt{2},26\sqrt{6},13\sqrt{6}$ which is a $30-60-90$ gives us an area of \[\frac{1}{2}(39\sqrt{2})(13\sqrt{6})=507\sqrt{3}\implies\boxed{510}.\]</p>
+<p>~ <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Mathkiddus" title="User:Mathkiddus">mathkiddus</a> ~plang2008~hashbrown2009</p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>改写后得 $z=75-x-y$。</p>
+<p>由不等式 $x-yz<y-zx$ 可改写为
+\[x-y(75-x-y)< y-x(75-x-y).\]\[76x-76y+y^2-x^2<0.\]\[(76-x-y)(x-y)<0.\]</p>
+<p>类似地，由不等式 $y-zx<z-xy$ 改写得
+\[y-x(75-x-y)<(75-x-y)-xy.\]\[2y + 2xy + x^2 - 74x - 75 < 0.\]\[(x + 1)(2y + x - 75) < 0.\]
+下一步是一个直观图像，可通过粗略地画出这两个不等式来看出。第一个不等式形似一个蝴蝶结（必须画出来才能看到），其边界为 $x-y=0$ 和 $76-x-y=0$。第二个是一个蝴蝶结，其边为 $x+1=0$ 和 $2y+x-75=0$。下面是我们的解所在的区域。
+ [图：见AoPS] 
+容易求出它们的交点，即 $(-1,38,38),(25,25,25)$ 和 $(-1,-1,77)$。这个三角形的边长为 $39\sqrt{2},26\sqrt{6},13\sqrt{6}$，这是一个 $30-60-90$ 三角形，给出面积
+\[\frac{1}{2}(39\sqrt{2})(13\sqrt{6})=507\sqrt{3}\implies\boxed{510}.\]</p>
+<p>~ mathkiddus ~plang2008~hashbrown2009</p></div></div>
+<div class="prob"><div class="qn">Problem 13 &nbsp; <span class="ans">答案 204</span></div><p style="color:#744210"><i>题目：</i></p><p>Alex divides a disk into four quadrants with two perpendicular diameters intersecting at the center of the disk. He draws $25$ more line segments through the disk, drawing each segment by selecting two points at random on the perimeter of the disk in different quadrants and connecting these two points. Find the expected number of regions into which these $27$ line segments divide the disk.</p><div class="cn"><span class="cnlabel">中文题目：</span><p>Alex 用两条互相垂直、交于圆盘中心的直径将圆盘分成四个象限。他又画了 $25$ 条线段，画每条线段的方法是：在圆盘边缘的不同象限上随机选两点并连接。求这 $27$ 条线段将圆盘分成的区域数的期望值。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>First, we calculate the probability that two segments intersect each other. Let the quadrants be numbered $1$ through $4$ in the normal labeling of quadrants, let the two perpendicular diameters be labeled the $x$-axis and $y$-axis, and let the two segments be $A$ and $B.$</p>
+<p>$\textbf{Case 1:}$ Segment $A$ has endpoints in two opposite quadrants.</p>
+<p><em>[图：原题附几何图，见 AoPS 原页]</em> </p>
+<p>This happens with probability $\frac{1}{3}.$ WLOG let the two quadrants be $1$ and $3.$ We do cases in which quadrants segment $B$ lies in.</p>
 <ul>
-<li>Quadrants $1$ and $2,@@MATH0@@3$ and $4,$ and $4$ and $1$: These share one quadrant with $A,$ and it is clear that for any of them to intersect $A,$ the endpoint that shares a quadrant with an endpoint of $A$ on a certain side of that endpoint of $A$ For example, if it was quadrants $1$ and $2,$ then the point in quadrant $1$ must be closer to the $x$-axis than the endpoint of $A$ in quadrant $1.$ This happens with probability $@@MATH3@@frac{1}{6}$ to have endpoints in any set of two quadrants, so this case contributes to the total probability</li>
+<li>Quadrants $1$ and $2,@@MATH9@@3$ and $4,$ and $4$ and $1$: These share one quadrant with $A,$ and it is clear that for any of them to intersect $A,$ the endpoint that shares a quadrant with an endpoint of $A$ on a certain side of that endpoint of $A$ For example, if it was quadrants $1$ and $2,$ then the point in quadrant $1$ must be closer to the $x$-axis than the endpoint of $A$ in quadrant $1.$ This happens with probability $\frac{1}{2}.$ Additionally, segment $B$ has a $\frac{1}{6}$ to have endpoints in any set of two quadrants, so this case contributes to the total probability</li>
 </ul>
 <p>\[\dfrac{1}{3}\left(\dfrac{1}{6}\cdot\dfrac{1}{2}+\dfrac{1}{6}\cdot\dfrac{1}{2}+\dfrac{1}{6}\cdot\dfrac{1}{2}+\dfrac{1}{6}\cdot\dfrac{1}{2}\right)=\dfrac{1}{9}\]</p>
 <ul>
@@ -118,27 +214,78 @@ It is simple to find the intersections of those which are $(-1,38,38),(25,25,25)
 </ul>
 <p>\[\dfrac{1}{3}\cdot\dfrac{1}{6}=\dfrac{1}{18}\]</p>
 <ul>
-<li>Quadrants $1$ and $3.$ We will first choose the endpoints, and then choose the segments from the endpoints. Let the endpoints of the segments in quadrant $1$ be $R_1$ and $R_2,$ and the endpoints of the segments in quadrant $3$ be $S_1$ and $S_2$ such that $R_1,R_2,S_1,$ and $S_2$ are in clockwise order. Note that the probability that $A$ and $B$ intersect is the probability that $A_1$ is paired with $B_1,$ which is $@@MATH16@@[@@MATH17@@cdot@@MATH18@@cdot@@MATH19@@dfrac{1}{36}.@@MATH20@@textbf{Case 2:}$
-Segment $A$ has endpoints in two adjacent quadrants.</li>
+<li>Quadrants $1$ and $3.$ We will first choose the endpoints, and then choose the segments from the endpoints. Let the endpoints of the segments in quadrant $1$ be $R_1$ and $R_2,$ and the endpoints of the segments in quadrant $3$ be $S_1$ and $S_2$ such that $R_1,R_2,S_1,$ and $S_2$ are in clockwise order. Note that the probability that $A$ and $B$ intersect is the probability that $A_1$ is paired with $B_1,$ which is $\dfrac{1}{2}.$ Thus, this case contributes to the total probability</li>
 </ul>
+<p>\[\dfrac{1}{3}\cdot\dfrac{1}{6}\cdot\dfrac{1}{2}=\dfrac{1}{36}.\]</p>
+<p>$\textbf{Case 2:}$
+Segment $A$ has endpoints in two adjacent quadrants.</p>
 <p><em>[图：原题附几何图，见 AoPS 原页]</em> </p>
-<p>This happens with probability $@@MATH21@@[@@MATH22@@left(@@MATH23@@cdot@@MATH24@@dfrac{1}{6}@@MATH25@@dfrac{1}{2}+@@MATH26@@cdot@@MATH27@@dfrac{1}{6}@@MATH28@@dfrac{1}{2}@@MATH29@@dfrac{2}{9}@@MATH30@@frac{1}{2},$ so this case contributes to the total probability</p>
+<p>This happens with probability $\frac{2}{3}.$ WLOG let the two quadrants be $1$ and $2.$ We do cases in which quadrants segment $B$ lies in.</p>
+<ul>
+<li>Quadrants $1$ and $3,@@MATH10@@2$ and $3,$ and $2$ and $4.$ This is similar to our first case above, so this contributes to the total probability</li>
+</ul>
+<p>\[\dfrac{2}{3}\left(\dfrac{1}{6}\cdot\dfrac{1}{2}+\dfrac{1}{6}\cdot\dfrac{1}{2}+\dfrac{1}{6}\cdot\dfrac{1}{2}+\dfrac{1}{6}\cdot\dfrac{1}{2}\right)=\dfrac{2}{9}\]</p>
+<ul>
+<li>Quadrants $3$ and $4.$ This cannot intersect segment $A.$</li>
+<li>Quadrants $1$ and $2,$ Similar to our third case above, this intersects segment $A$ with probability $\frac{1}{2},$ so this case contributes to the total probability</li>
+</ul>
 <p>\[\dfrac{2}{3}\cdot\dfrac{1}{6}\cdot\dfrac{1}{2}=\dfrac{1}{18}.\]
 Thus, the probability that two segments intersect is
 \[\dfrac{1}{9}+\dfrac{1}{18}+\dfrac{1}{36}+\dfrac{2}{9}+\dfrac{1}{18}=\dfrac{17}{36}.\]
-Next, we will compute the expected number of intersections of a segment with the axes. WLOG let a segment have an endpoint in quadrant $1.$ Then, it will intersect each axis with probability $@@MATH39@@frac{4}{3}.$</p>
+Next, we will compute the expected number of intersections of a segment with the axes. WLOG let a segment have an endpoint in quadrant $1.$ Then, it will intersect each axis with probability $\dfrac{2}{3}$ because two out of the three remaining quadrants let it intersect a specific axis, so the expected number of axes a segment intersects is $\frac{4}{3}.$</p>
 <p>So, why do intersections matter? Because when adding a segment, it will pass through a number of regions, and for each region it passes through, it will split that region into two and add another region. The segment starts in a region, and for each intersection, it will enter another region, so the number of regions a segment passes through is $1$ more than the number of intersections with the axes and other segments. Thus, we have that by linearity of expectation the expected number of new regions created by adding a segment is
 \[\dfrac{17}{36}\cdot(\text{number of segments already added})+\dfrac{4}{3}+1,\]
 so the number of new regions added in total by $25$ segments again by linearity of expectation is
 \[\sum_{k=0}^{24}\left(\dfrac{17}{36}k+\dfrac{7}{3}\right)=\dfrac{17}{36}\cdot \dfrac{24\cdot 25}{2}+\dfrac{25\cdot 7}{3}\]
 which simplifies to $200$ as the expected number of new regions added by the $25$ segments. The axes create $4$ regions to begin with, so our answer is
 \[200+4=\boxed{204}.\]</p>
-<p>~BS2012, eevee9406 ~hashbrown2009</p></div>
-<div class="prob"><div class="qn">Problem 14 &nbsp; <span class="ans">答案 60</span></div><p style="color:#744210"><i>题目：</i></p><p>Let $ABCDE$ be a convex pentagon with $AB=14,@@MATH0@@CD=24,@@MATH1@@EA=26,$ and $@@MATH2@@angle E=60^{@@MATH3@@sqrt{p},$ where $m$ and $n$ are positive integers and $p$ is not divisible by the square of any prime. Find $m+n+p.$</p><div class="cn"><span class="cnlabel">中文：</span><p>设 $ABCDE$ 是凸五边形，$AB=14, BC=7, CD=24, DE=13, EA=26$，且 $@@MATH0@@angle E=60^@@MATH1@@sqrt{p}$，其中 $m,n$ 为正整数且 $p$ 不被任何素数的平方整除。求 $m+n+p$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>Assume $AX=a$, $BX=b$, $CX=c$, $DX=d$, $EX=e$, by Ptolemy inequality we have $a+2d@@MATH0@@sqrt{3}XE; a+2c@@MATH1@@sqrt{3}BX$, and as we are minimizing the value of the LHS, we want the inequality reached; this happens when both quadrilaterals $CXAB$ and $AXDE$ are concyclic. We notice that we have right angles $@@MATH2@@angle{BCA}$ and $@@MATH3@@angle{EXA}$ as they both subtend a diameter of circles by noticing that we have formed Pythagorean triples (along with being told that $@@MATH4@@angle{E}=60^{@@MATH5@@sqrt{3}(XE+BX)$, or $a+c+d=@@MATH6@@sqrt{3}}{2}(BE)$. Thus we want to find $a+b+c+d+e=(1+@@MATH7@@sqrt{3}}{2})BE$.</p>
-<p>By Law of Cosines, we know that $@@MATH8@@angle{DAC})=@@MATH9@@angle{CAB}=@@MATH10@@circ}$, we know $@@MATH11@@angle{EAB})=cos(@@MATH12@@angle{DAE}+@@MATH13@@frac{1}{7}))=cos(60^{@@MATH14@@arccos(@@MATH15@@sin(@@MATH16@@frac{1}{7}))=@@MATH17@@frac{1}{7})^2}$. Then, once again with Law of Cosines, we find that $BE=38$, and thus the minimum of $a+b+c+d+e$, or $(1+@@MATH18@@sqrt{3}}{2})BE$, is $38+19@@MATH19@@implies\boxed{060}$.</p>
+<p>~BS2012, eevee9406 ~hashbrown2009</p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>首先，我们计算两条线段相交的概率。按象限的通常标记法将四个象限编号为 $1$ 到 $4$，将两条相互垂直的直径记为 $x$ 轴和 $y$ 轴，并把两条线段记为 $A$ 和 $B$。</p>
+<p>$\textbf{情形 1：}$ 线段 $A$ 的两端点位于两个相对的象限。</p>
+<p>[图：见AoPS] </p>
+<p>这以概率 $\frac{1}{3}$ 发生。不妨设这两个象限为 $1$ 和 $3$。我们按线段 $B$ 所在的象限分类。</p>
+<ul>
+<li>象限 $1$ 和 $2$、$2$ 和 $3$、$3$ 和 $4$、$4$ 和 $1$：这些与 $A$ 共享一个象限。显然，要使它们中任何一个与 $A$ 相交，与 $A$ 的某端点共享象限的那个端点须位于 $A$ 该端点的某一侧。例如，若是象限 $1$ 和 $2$，则象限 $1$ 中的点必须比 $A$ 在象限 $1$ 中的端点更靠近 $x$ 轴。这以概率 $\frac{1}{2}$ 发生。此外，线段 $B$ 有 $\frac{1}{6}$ 的概率落在任意一组两个象限中，所以这种情形对总概率的贡献为</li>
+</ul>
+<p>\[\dfrac{1}{3}\left(\dfrac{1}{6}\cdot\dfrac{1}{2}+\dfrac{1}{6}\cdot\dfrac{1}{2}+\dfrac{1}{6}\cdot\dfrac{1}{2}+\dfrac{1}{6}\cdot\dfrac{1}{2}\right)=\dfrac{1}{9}\]</p>
+<ul>
+<li>象限 $2$ 和 $4$。这总是与线段 $A$ 相交，所以这种情形对总概率的贡献为</li>
+</ul>
+<p>\[\dfrac{1}{3}\cdot\dfrac{1}{6}=\dfrac{1}{18}\]</p>
+<ul>
+<li>象限 $1$ 和 $3$。我们先选取端点，再从端点选取线段。设象限 $1$ 中两线段的端点为 $R_1$ 和 $R_2$，象限 $3$ 中的端点为 $S_1$ 和 $S_2$，使得 $R_1,R_2,S_1,S_2$ 按顺时针顺序排列。注意 $A$ 与 $B$ 相交的概率即 $A_1$ 与 $B_1$ 配对的概率，为 $\dfrac{1}{2}$。因此这种情形对总概率的贡献为</li>
+</ul>
+<p>\[\dfrac{1}{3}\cdot\dfrac{1}{6}\cdot\dfrac{1}{2}=\dfrac{1}{36}.\]</p>
+<p>$\textbf{情形 2：}$
+线段 $A$ 的两端点位于两个相邻的象限。</p>
+<p>[图：见AoPS] </p>
+<p>这以概率 $\frac{2}{3}$ 发生。不妨设这两个象限为 $1$ 和 $2$。我们按线段 $B$ 所在的象限分类。</p>
+<ul>
+<li>象限 $1$ 和 $3$、$1$ 和 $4$、$2$ 和 $3$、$2$ 和 $4$。这与上面第一种情形类似，所以对总概率的贡献为</li>
+</ul>
+<p>\[\dfrac{2}{3}\left(\dfrac{1}{6}\cdot\dfrac{1}{2}+\dfrac{1}{6}\cdot\dfrac{1}{2}+\dfrac{1}{6}\cdot\dfrac{1}{2}+\dfrac{1}{6}\cdot\dfrac{1}{2}\right)=\dfrac{2}{9}\]</p>
+<ul>
+<li>象限 $3$ 和 $4$。这不可能与线段 $A$ 相交。</li>
+<li>象限 $1$ 和 $2$。与上面第三种情形类似，这以概率 $\frac{1}{2}$ 与线段 $A$ 相交，所以这种情形对总概率的贡献为</li>
+</ul>
+<p>\[\dfrac{2}{3}\cdot\dfrac{1}{6}\cdot\dfrac{1}{2}=\dfrac{1}{18}.\]
+因此，两条线段相交的概率为
+\[\dfrac{1}{9}+\dfrac{1}{18}+\dfrac{1}{36}+\dfrac{2}{9}+\dfrac{1}{18}=\dfrac{17}{36}.\]
+接下来，我们计算一条线段与坐标轴相交次数的期望值。不妨设一条线段有一个端点在象限 $1$ 中。则它与每条轴相交的概率为 $\dfrac{2}{3}$，因为剩下的三个象限中有两个能使它与某条特定轴相交，所以一条线段与轴相交次数的期望为 $\frac{4}{3}$。</p>
+<p>那么，交点为何重要？因为当添加一条线段时，它会穿过若干区域，对它穿过的每个区域，它都会把该区域一分为二并新增一个区域。线段从某个区域开始，每次相交就进入另一个区域，所以一条线段穿过的区域数比它与坐标轴及其他线段的交点数多 $1$。因此，由期望的线性性，添加一条线段所新增区域数的期望为
+\[\dfrac{17}{36}\cdot(\text{已添加的线段数})+\dfrac{4}{3}+1,\]
+所以由期望的线性性，$25$ 条线段总共新增区域数为
+\[\sum_{k=0}^{24}\left(\dfrac{17}{36}k+\dfrac{7}{3}\right)=\dfrac{17}{36}\cdot \dfrac{24\cdot 25}{2}+\dfrac{25\cdot 7}{3}\]
+化简为 $200$，即 $25$ 条线段所新增区域数的期望。坐标轴一开始就把圆盘分成 $4$ 个区域，所以答案为
+\[200+4=\boxed{204}.\]</p>
+<p>~BS2012, eevee9406 ~hashbrown2009</p></div></div>
+<div class="prob"><div class="qn">Problem 14 &nbsp; <span class="ans">答案 60</span></div><p style="color:#744210"><i>题目：</i></p><p>Let $ABCDE$ be a convex pentagon with $AB=14,@@MATH0@@CD=24,@@MATH1@@EA=26,$ and $\angle B=\angle E=60^{\circ}.$ For each point $X$ in the plane, define $f(X)=AX+BX+CX+DX+EX.$ The least possible value of $f(X)$ can be expressed as $m+n\sqrt{p},$ where $m$ and $n$ are positive integers and $p$ is not divisible by the square of any prime. Find $m+n+p.$</p><div class="cn"><span class="cnlabel">中文题目：</span><p>设 $ABCDE$ 是凸五边形，$AB=14, BC=7, CD=24, DE=13, EA=26$，且 $\angle B=\angle E=60^\circ$。对平面内每点 $X$，定义 $f(X)=AX+BX+CX+DX+EX$。$f(X)$ 的最小可能值可表示为 $m+n\sqrt{p}$，其中 $m,n$ 为正整数且 $p$ 不被任何素数的平方整除。求 $m+n+p$。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>Assume $AX=a$, $BX=b$, $CX=c$, $DX=d$, $EX=e$, by Ptolemy inequality we have $a+2d\geq \sqrt{3}XE; a+2c\geq \sqrt{3}BX$, and as we are minimizing the value of the LHS, we want the inequality reached; this happens when both quadrilaterals $CXAB$ and $AXDE$ are concyclic. We notice that we have right angles $\angle{BXA}=\angle{BCA}$ and $\angle{EDA}=\angle{EXA}$ as they both subtend a diameter of circles by noticing that we have formed Pythagorean triples (along with being told that $\angle{B}=\angle{E}=60^{\circ}$. ）And so, since we have supplementary angles, $B$, $X$, and $E$ are collinear. Thus, we add up the two equalities to get $2a+2c+2d=\sqrt{3}(XE+BX)$, or $a+c+d=\frac{\sqrt{3}}{2}(BE)$. Thus we want to find $a+b+c+d+e=(1+\frac{\sqrt{3}}{2})BE$.</p>
+<p>By Law of Cosines, we know that $\cos(\angle{DAC})=\frac{1}{7}$, and since $\angle{CAB}=\angle{DAE}=30^{\circ}$, we know $\cos(\angle{EAB})=cos(\angle{CAB}+\angle{DAE}+\arccos(\frac{1}{7}))=cos(60^{\circ}+\arccos(\frac{1}{7}))$, which we find with the cosine angle addition formula and the fact that $\sin(\arccos(\frac{1}{7}))=\sqrt{1-(\frac{1}{7})^2}$. Then, once again with Law of Cosines, we find that $BE=38$, and thus the minimum of $a+b+c+d+e$, or $(1+\frac{\sqrt{3}}{2})BE$, is $38+19\sqrt{3}\implies\boxed{060}$.</p>
 <p>~Bluesoul ~hashbrown2009</p>
-<p>Rewritten and edited by <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Juwushu" title="User:Juwushu">Juwushu</a>.</p></div>
-<div class="prob"><div class="qn">Problem 15 &nbsp; <span class="ans">答案 735</span></div><p style="color:#744210"><i>题目：</i></p><p>Let $N$ denote the number of ordered triples of positive integers $(a, b, c)$ such that $a, b, c \leq 3^6$ and $a^3 + b^3 + c^3$ is a multiple of $3^7$. Find the remainder when $N$ is divided by $1000$.</p><div class="cn"><span class="cnlabel">中文：</span><p>设 $N$ 为满足 $a,b,c \leq 3^6$ 且 $a^3+b^3+c^3$ 是 $3^7$ 的倍数的有序正整数三元组 $(a,b,c)$ 的个数。求 $N$ 除以 $1000$ 的余数。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><p>First, state the LTE Lemma for $p = 3, n = 3$, which we might use.</p>
+<p>Rewritten and edited by <a href="https://artofproblemsolving.com/wiki/index.php?title=User:Juwushu" title="User:Juwushu">Juwushu</a>.</p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>设 $AX=a$，$BX=b$，$CX=c$，$DX=d$，$EX=e$，由托勒密不等式有 $a+2d\geq \sqrt{3}XE$；$a+2c\geq \sqrt{3}BX$，又因为我们要最小化左边的值，所以希望不等式取到等号；这发生在四边形 $CXAB$ 和 $AXDE$ 都共圆时。我们注意到有直角 $\angle{BXA}=\angle{BCA}$ 和 $\angle{EDA}=\angle{EXA}$，因为它们都对着圆的直径（这可由我们构造出了勾股数组看出，再加上题目给出 $\angle{B}=\angle{E}=60^{\circ}$）。于是，由于有互补角，$B$、$X$、$E$ 三点共线。因此，把这两个等式相加得到 $2a+2c+2d=\sqrt{3}(XE+BX)$，即 $a+c+d=\frac{\sqrt{3}}{2}(BE)$。于是我们要求 $a+b+c+d+e=(1+\frac{\sqrt{3}}{2})BE$。</p>
+<p>由余弦定理，我们知道 $\cos(\angle{DAC})=\frac{1}{7}$，又因为 $\angle{CAB}=\angle{DAE}=30^{\circ}$，所以 $\cos(\angle{EAB})=\cos(\angle{CAB}+\angle{DAE}+\arccos(\frac{1}{7}))=\cos(60^{\circ}+\arccos(\frac{1}{7}))$，我们用余弦的角加法公式以及 $\sin(\arccos(\frac{1}{7}))=\sqrt{1-(\frac{1}{7})^2}$ 的事实求出它。然后，再次使用余弦定理，我们求得 $BE=38$，因此 $a+b+c+d+e$（即 $(1+\frac{\sqrt{3}}{2})BE$）的最小值为 $38+19\sqrt{3}\implies\boxed{060}$。</p>
+<p>~Bluesoul ~hashbrown2009</p>
+<p>由 Juwushu 重写和编辑。</p></div></div>
+<div class="prob"><div class="qn">Problem 15 &nbsp; <span class="ans">答案 735</span></div><p style="color:#744210"><i>题目：</i></p><p>Let $N$ denote the number of ordered triples of positive integers $(a, b, c)$ such that $a, b, c \leq 3^6$ and $a^3 + b^3 + c^3$ is a multiple of $3^7$. Find the remainder when $N$ is divided by $1000$.</p><div class="cn"><span class="cnlabel">中文题目：</span><p>设 $N$ 为满足 $a,b,c \leq 3^6$ 且 $a^3+b^3+c^3$ 是 $3^7$ 的倍数的有序正整数三元组 $(a,b,c)$ 的个数。求 $N$ 除以 $1000$ 的余数。</p></div><hr style="border:none;border-top:1px dashed #e0c890"><p style="color:#b7791f;font-weight:600">解答 (Solution 1 · AoPS)：</p><div class="engsol"><p>First, state the LTE Lemma for $p = 3, n = 3$, which we might use.</p>
 <pre><code>
 </code></pre>
 <pre><code>    If , then
@@ -146,8 +293,99 @@ which simplifies to $200$ as the expected number of new regions added by the $25
     If , then
 
 </code></pre>
-<p>Then we classify all cube numbers $@@MATH0@@times 3^{10}$.</p>
-<p>$3^5 = 243 @@MATH1@@mod{200},43^2=1600+240+9@@MATH2@@mod{200}$</p>
-<p>Hence $15@@MATH3@@equiv15@@MATH4@@equiv735@@MATH5@@boxed{735}$.</p>
-<p>~ <a href="https://artofproblemsolving.com/wiki/index.php/User:Rakko12">Rakko12</a></p></div>
+<p>Then we classify all cube numbers $\mod{3^7}$</p>
+<pre><code>
+</code></pre>
+<pre><code>   We can write , so .
+
+        If , , there are 27 roots.
+        If , , there are 27 roots.
+        If , , there are 27 roots.
+
+
+
+</code></pre>
+<pre><code>   We can write , so .
+</code></pre>
+<pre><code>   For , let  and hence .
+
+
+
+
+
+
+
+
+   For , each has 9 roots.
+
+   Since , . They are the corresponding classes.
+</code></pre>
+<pre><code>   Same apply to . For , each has 9 roots.
+</code></pre>
+<pre><code>   Since , . They are the corresponding classes.
+</code></pre>
+<pre><code>
+</code></pre>
+<pre><code>   We write , so .
+</code></pre>
+<pre><code>   For , then .
+
+
+
+
+
+   For , 1 root each.
+
+   , . They are the corresponding classes.
+</code></pre>
+<pre><code>   Same apply to . For , 1 root each.
+</code></pre>
+<pre><code>   , . They are the corresponding classes.
+</code></pre>
+<p>Summarized the results:</p>
+<pre><code>    : If , then  has 27 roots. .
+    : If , then  has 9 roots. .
+    : If , then  has 1 root. .
+    Otherwise,  has no roots.
+</code></pre>
+<p>We do the final combinatorial problem.</p>
+<pre><code>    Case: :
+    Case : No solution.
+    Case : No solution.
+    Case: :
+    Case : No solution.
+    Case: :
+    Case : No solution.
+    Case : No solution.
+    Case :
+    Case : No solution.
+</code></pre>
+<p>Total is $(3+6+2+4)3^{10}=15\times 3^{10}$.</p>
+<p>$3^5 = 243 \equiv 43 \mod{200},43^2=1600+240+9\equiv49\mod{200}$</p>
+<p>Hence $15\times3^{10}\equiv15\times49\equiv735\mod{1000}$</p>
+<p>Answer is $\boxed{735}$.</p>
+<p>~ <a href="https://artofproblemsolving.com/wiki/index.php/User:Rakko12">Rakko12</a></p></div><div class="cn"><span class="cnlabel">中文解答：</span><p>首先，叙述我们可能要用到的 $p = 3, n = 3$ 时的 LTE（指数提升）引理。</p>
+<p>（引理大意：当满足相应条件时，给出相应的指数提升结论。）</p>
+<p>然后我们对所有立方数模 $3^7$ 进行分类。</p>
+<p>我们可以将每个数写成相应形式，从而把立方数分为如下三类：</p>
+<ul>
+<li>若属于第一类，则立方数有 $27$ 个根（对三种子情形各 $27$ 个根）。</li>
+<li>若属于第二类，则相应地各有 $9$ 个根。</li>
+<li>若属于第三类，则相应地各有 $1$ 个根。</li>
+</ul>
+<p>（对各情形分别用相应的同余类来对应。）</p>
+<p>总结结果如下：</p>
+<ul>
+<li>若属于第一类，则立方数有 $27$ 个根。</li>
+<li>若属于第二类，则有 $9$ 个根。</li>
+<li>若属于第三类，则有 $1$ 个根。</li>
+<li>否则，无根。</li>
+</ul>
+<p>我们做最后的组合计数问题：</p>
+<p>（按各情形组合，无解的情形舍去。）</p>
+<p>总数为 $(3+6+2+4)3^{10}=15\times 3^{10}$。</p>
+<p>$3^5 = 243 \equiv 43 \mod{200},43^2=1600+240+9\equiv49\mod{200}$</p>
+<p>因此 $15\times3^{10}\equiv15\times49\equiv735\mod{1000}$</p>
+<p>答案是 $\boxed{735}$。</p>
+<p>~ Rakko12</p></div></div>
 <hr><p style="text-align:center;color:#718096;font-size:.85em">来源：AoPS 2025 AIME I · 由 Yoga 整理</p></body></html>
